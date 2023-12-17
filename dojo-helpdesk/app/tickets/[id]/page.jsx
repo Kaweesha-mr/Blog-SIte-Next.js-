@@ -18,6 +18,8 @@ async function getTickets(id){
 
     //next js only fetch data once at build time
     //
+
+    await new Promise (resolve => setTimeout(resolve,3000))
     const res = await fetch(`http://localhost:4000/tickets/${id}`, {
         next: {
             revalidate: 0, 
